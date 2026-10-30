@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bk2dmn1q8h2h0"]
+
+[ext_resource type="Script" uid="uid://btea1mcytqm0r" path="res://scripts/dev/test_harness.gd" id="1_i80y5"]
+
+[node name="TestHarness" type="Control" unique_id=1709739572]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i80y5")

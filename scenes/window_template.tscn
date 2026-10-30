@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c74q327n3bk67"]
+
+[ext_resource type="Theme" uid="uid://gmdisi84str8" path="res://theme/base_theme.theme" id="1_cvppv"]
+[ext_resource type="StyleBox" uid="uid://c8fs5xchstxje" path="res://theme/gray_panel.stylebox" id="2_cvppv"]
+[ext_resource type="Script" uid="uid://xjq8hcoc1xwm" path="res://scripts/ui/window_template.gd" id="2_v6cgr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7tmyb"]
+
+[node name="WindowTemplate" type="PanelContainer" unique_id=1399279207]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.5
+offset_top = -108.5
+offset_right = 190.5
+offset_bottom = 108.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource("1_cvppv")
+script = ExtResource("2_v6cgr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1704319266]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1891216944]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_cvppv")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=702221776]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=2055701809]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=850333004]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Error: User is not available"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1668593757]
+layout_mode = 2
+theme_override_constants/separation = 42
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7tmyb")
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2008945744]
+layout_mode = 2
+text = "Okay"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
